@@ -16,7 +16,7 @@
 ## LTE module
   Register with NMU's network
 ## Pi stack/reciever
-  Constantly listen for data, have connected to Euclid
+  Constantly listen for data, have connected to Euclid. Relays weather data to [OpenWeatherMap](http://openweathermap.com/)
 ## Data storage on Euclid
   Create a euclid account for our purposes
   
