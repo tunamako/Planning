@@ -24,4 +24,4 @@
 ## Webpage display
   Read from database
   
-  Use Google maps API
+  Use [Leaflet](http://leafletjs.com/)
