@@ -19,7 +19,7 @@
   
   * $28.50 [LoRa radio](https://www.amazon.com/distance-wireless-Expansion-Board-Raspberry/dp/B01M7V7PRL)
   
-  * $7.98 [RFID Reader](https://www.amazon.com/Gowoops-RFID-Kit-Arduino-Raspberry/dp/B01KFM0XNG)
+  * $12.90 [RFID Reader](http://www.robotshop.com/en/seeedstudio-grove-125khz-rfid-reader.html?gclid=EAIaIQobChMIjebekuTt1gIV1VmGCh08gAaREAQYBiABEgKjxPD_BwE)
   
   * $14.99 [ADC (battery voltage)](https://www.abelectronics.co.uk/p/69/ADC-Pi-Zero-Raspberry-Pi-Analogue-to-Digital-converter)
   
