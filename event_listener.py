@@ -1,5 +1,7 @@
 from pymongo import MongoClient
-
+import threading
+import socket
+import json
 
 def add_event(data):
 	db.visits.insert_one(data)
@@ -30,15 +32,41 @@ def add_event(data):
 		}
 	)
 
+def restart_birdfeeder():
+	#TODO: send data over lora to reset a birdfeeder
+	return
+
+def update_photog_rfids():
+	#TODO: propagate newly photographed rfids to all birdfeeders
+	return
+
+def lora_listener():
+	while True: 
+		#TODO:
+		#listen on LoRa
+		#Store payload in data
+		#Check if payload contains an image
+			#update_photog_rfids()
+		#add_event(data)
+		continue
+
+def website_listener():
+	while True:
+		conn, client_addr = sock.accept()
+		data = json.loads(conn.recv(4096))
+		conn.close()
+
+		if data["command"] == "restart":
+			restart_birdfeeder()
 
 
-client = MongoClient("euclid.nmu.edu", 27017)
-db = client.chickadees
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+sock.bind(("localhost", 8125))
+sock.listen()
 
-#TODO:
-#listen on LoRa
-#Store payload in data
-#Check if payload contains an image
-	#If so, update list of photographed rfids for each birdfeeder
+mongo_client = MongoClient("euclid.nmu.edu", 27017, username="admin", password="nmuchickadee", authSource="chickadees")
+db = mongo_client.chickadees
 
-add_event(data)
+threading.Thread(target=lora_listener).start()
+
+website_listener()
